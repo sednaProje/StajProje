@@ -86,3 +86,13 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+
+  mat-tab-group {
+    align-items: center;
+  }
+
+ .login {
+    max-width: 400px;
+ }
+
+ 
