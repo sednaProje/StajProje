@@ -78,7 +78,7 @@
     cursor: pointer;
     outline: none;
   } */
-  .example-card {
+  .mat-card {
     max-width: 500px;
     align-items: center;
   }
@@ -89,12 +89,9 @@
 
   }
 
- .login {
-
-  align-items: center;
-  max-width: 6000px;
-
- }
+.logsign {
+  max-width: 500px;
+}
 
 
 
