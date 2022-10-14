@@ -31,14 +31,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './shared/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    
+
+
+
 
 
    ],
@@ -74,10 +78,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDividerModule,
     MatTabsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }
