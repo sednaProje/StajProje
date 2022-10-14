@@ -12,7 +12,7 @@ import { Login } from 'src/app/interfaces/login';
 
 
 export class LoginComponent implements OnInit {
-  token:string="var";
+  token:string="token";
   username:string="";
   password:string="";
 

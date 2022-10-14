@@ -4,10 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn: any;
 
   constructor() { }
-  IsLoggedIn(){ debugger
-    return localStorage.getItem('token');
+  IsLoggedIn(){
+    return !!localStorage.getItem('token');
   }
 }

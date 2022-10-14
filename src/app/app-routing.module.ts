@@ -7,11 +7,16 @@ import { LoginComponent } from './Pages/login/login.component';
 
 import { RegisterComponent } from './Pages/register/register.component';
 import { HomeComponent } from './Pages/home/home/home.component';
+import { GuardGuard } from './shared/guard.guard';
+
+
+
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
+  {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-   {path:'home',component:HomeComponent}
+   {path:'home',component:HomeComponent,canActivate:[GuardGuard]}
 
 ];
 
