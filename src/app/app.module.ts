@@ -33,7 +33,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthGuard } from './shared/auth.guard';
+
+
 
 @NgModule({
   declarations: [
