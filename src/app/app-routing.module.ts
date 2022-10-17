@@ -15,7 +15,7 @@ import { GuardGuard } from './shared/guard.guard';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path:'register',component:RegisterComponent,canActivate:[GuardGuard]},
    {path:'home',component:HomeComponent,canActivate:[GuardGuard]}
 
 ];

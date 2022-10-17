@@ -1,4 +1,5 @@
 <app-navbar> </app-navbar>
+<body>
 <div class="logsign">
   <mat-card class="login">
     <mat-tab-group
@@ -8,30 +9,28 @@
           <mat-card-content>
             <form class="login form">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Email</mat-label><br />
+                <mat-label>Email</mat-label>
                 <input type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username">
               </mat-form-field>
               <br />
-
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Password</mat-label>
-                <input type="password" matInput placeholder="Type your password" [(ngModel)]="password" name="password">
+                <input type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password">
               </mat-form-field>
               <br />
             </form>
           </mat-card-content>
           <mat-card-actions>
-            <button (click)="login()" mat-button>Sign In</button>
+            <button (click)="login()" mat-flat-button color="primary">Sign In</button>
           </mat-card-actions>
         </mat-card></mat-tab>
       <br />  <br />
       <mat-tab id="sign-up" label="Sign Up">
         <mat-card class="example-card">
-        <mat-card-content
-          >
+        <mat-card-content>
           <form class="sign up form">
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Email</mat-label><br />
+              <mat-label>Email</mat-label>
               <input matInput placeholder="Email" /> </mat-form-field
             ><br />
             <mat-form-field class="example-full-width" appearance="fill">
@@ -40,9 +39,10 @@
             </mat-form-field>
           </form> </mat-card-content
         ><mat-card-actions>
-          <button mat-button>Save</button>
+          <button mat-flat-button color="primary">Save</button>
         </mat-card-actions>
         </mat-card></mat-tab>
     </mat-tab-group>
   </mat-card>
 </div>
+</body>
