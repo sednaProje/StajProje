@@ -1,24 +1,21 @@
 body{
   background-image:linear-gradient(#fff,#26c6f7);
   text-align: center;
-
-
-
 }
 .mat-card {
   max-width: 500px;
   align-items: center;
 }
-
-
   .mat-tab-group {
     max-width: 600px;
     align-items: center;
+
   }
 
 .logsign {
 max-width: 500px;
 margin: auto;
+
 }
 
 

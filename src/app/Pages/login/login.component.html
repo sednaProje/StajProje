@@ -31,15 +31,15 @@
           <form class="sign up form">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Email" /> </mat-form-field
+              <input matInput placeholder="Email" [(ngModel)]="rgusername" name="rgusername" /> </mat-form-field
             ><br />
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Password</mat-label>
-              <input type="password" matInput placeholder="Password" />
+              <input type="password" matInput placeholder="Password" [(ngModel)]="rgpassword" name="rgpassword" />
             </mat-form-field>
           </form> </mat-card-content
         ><mat-card-actions>
-          <button mat-flat-button color="primary" [disabled] = "!username ||!password">Save</button>
+          <button mat-flat-button color="primary" [disabled] = "!rgusername ||!rgpassword">Save</button>
         </mat-card-actions>
         </mat-card></mat-tab>
     </mat-tab-group>

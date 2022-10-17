@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,20 +17,30 @@ export class LoginComponent implements OnInit {
   username:string="";
   password:string="";
 
+  rgusername:string="";
+  rgpassword:string="";
 
   // username = new FormControl();
   // password = new FormControl();
   constructor(private route:Router) { }
 login(){
-if(this.username=="veysel"&&this.password=="1234"){
+
+if(this.username==this.rgusername&&this.password==this.rgpassword){
   localStorage.setItem(this.token,"token");
   this.route.navigate(["home"])
   console.log("Çalıştı");
 
 }
 }
-  ngOnInit() {
+rg(){
+  console.log(this.rgusername);
+console.log(this.rgpassword);
 
+}
+  ngOnInit() {
+if(localStorage.getItem(this.token)!=null){
+  this.route.navigate(["home"])
+}else this.route.navigate(["login"])
 
   }
 
