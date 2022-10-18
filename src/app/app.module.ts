@@ -21,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -49,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
    ],
   imports: [
+    MatSnackBarModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -84,7 +86,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule
 
   ],
-  providers: [],
+  providers: [
+   {provide:MAT_SNACK_BAR_DEFAULT_OPTIONS,useValue:{duration:3000}}
+  ],
   bootstrap: [AppComponent],
 
 })
