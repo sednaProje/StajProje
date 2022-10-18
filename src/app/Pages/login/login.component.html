@@ -11,12 +11,12 @@
             <form class="login form">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Email</mat-label>
-                <input type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username">
+                <input type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
               </mat-form-field>
               <br />
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Password</mat-label>
-                <input type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password">
+                <input type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password" required>
               </mat-form-field>
               <br />
             </form>
@@ -32,11 +32,11 @@
           <form class="sign up form">
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="Email" [(ngModel)]="rgusername" name="rgusername" /> </mat-form-field
+              <input matInput placeholder="Email" [(ngModel)]="rgusername" name="rgusername" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/> </mat-form-field
             ><br />
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Password</mat-label>
-              <input type="password" matInput placeholder="Password" [(ngModel)]="rgpassword" name="rgpassword" />
+              <input type="password" matInput placeholder="Password" [(ngModel)]="rgpassword" name="rgpassword" required>
             </mat-form-field>
           </form> </mat-card-content>
           <mat-card-actions>
