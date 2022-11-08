@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -20,8 +20,11 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@material/snackbar": "^14.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

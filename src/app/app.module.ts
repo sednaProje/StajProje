@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -35,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -43,13 +45,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-
-
-
-
+    UserComponent,
 
    ],
   imports: [
+    HttpClientModule,
     MatSnackBarModule,
     BrowserModule,
     AppRoutingModule,
@@ -83,7 +83,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
 
   ],
   providers: [
