@@ -33,10 +33,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-
-
+import { HomeComponent } from './Pages/home/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserComponent } from './components/user/user.component';
+import { HostelComponent } from './Pages/hostel/hostel.component';
+import { RoomtypeComponent } from './Pages/roomtype/roomtype.component';
+import { HotelComponent } from './Pages/hotel/hotel.component';
+import { AcenteComponent } from './Pages/acente/acente.component';
+import { MatTable } from '@angular/material/table';
+import { AsyncPipe, registerLocaleData } from "@angular/common";
+import { AddhotelsComponent } from './Pages/hotel/addhotels/addhotels.component';
+
 
 
 
@@ -45,9 +51,17 @@ import { UserComponent } from './components/user/user.component';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    UserComponent,
+    NavbarComponent,
+    HomeComponent,
+    HostelComponent,
+    RoomtypeComponent,
+    HotelComponent,
+    AcenteComponent,
+    AddhotelsComponent
+
 
    ],
+
   imports: [
     HttpClientModule,
     MatSnackBarModule,
@@ -84,11 +98,16 @@ import { UserComponent } from './components/user/user.component';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatDialogModule,
+
 
   ],
+
   providers: [
-   {provide:MAT_SNACK_BAR_DEFAULT_OPTIONS,useValue:{duration:3000}}
+   {provide:MAT_SNACK_BAR_DEFAULT_OPTIONS,useValue:{duration:3000}},
+   AsyncPipe
   ],
   bootstrap: [AppComponent],
 

@@ -1,6 +1,6 @@
 import { registerLocaleData } from '@angular/common';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar,MatSnackBarConfig} from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,16 +21,16 @@ import { AddContactRequest } from 'src/app/models/AddContactRequest';
 
 
 export class LoginComponent implements OnInit {
-  token:string="token";
+   token:string="token";
+   loguser:string="Loguser";
   username:string="";
   password:string="";
   rgusername:string="";
   rgpassword:string="";
-  Username:string="";
-  Password:string="";
   addContactRequest:AddContactRequest = new AddContactRequest();
 
-
+  a:boolean=true;
+s:any=0;
 data:any;
   i:any= 0;
   users:any;
@@ -51,27 +51,41 @@ data:any;
 
 
    register(){
-
     this.addContactRequest.Username = this.rgusername;
     this.addContactRequest.Password = this.rgpassword;
-  this.registerService.addUser(this.addContactRequest).subscribe(resp=>{
-   this._snackBar.open("Kayıt Başarılı");
-   window.location.reload();
-})
+    for(;this.s<this.users.length;this.s++){
+      if(this.rgusername==this.users[this.s].username){
+        this._snackBar.open("Kullanıcı Adı Kayıtlı!");
+        this.a=false;
+        break;
+      }
+
+    }
+    if(this.a==true){
+      this.registerService.addUser(this.addContactRequest).subscribe(resp=>{
+        this._snackBar.open("Kayıt Başarılı");
+        window.location.reload();
+
+     })
+    }
 
 }
 
 login(){
-
   for (this.i = 0 ;this.i<this.users.length;this.i++){
     if(this.username==this.users[this.i].username&&this.password==this.users[this.i].password){
+      this._snackBar.open("Giriş Başarılı")
       localStorage.setItem(this.token,"token");
       this.route.navigate(["home"])
-      console.log("Çalıştı");
+      localStorage.setItem(this.loguser,JSON.stringify(this.username));
+
       break;
     }
-  }
+    else(
+      this._snackBar.open("Kullanıcı Adı veya Şifre Hatalı")
+    )
 
+  }
 }
   ngOnInit() {
 if(localStorage.getItem(this.token)!=null){

@@ -1,4 +1,4 @@
-<app-navbar> </app-navbar>
+
 <body>
   <br/><br/><br/><br/> <br/>
 <div class="logsign">
@@ -10,12 +10,12 @@
           <mat-card-content>
             <form class="login form">
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Email</mat-label>
+                <mat-label>Kullanıcı Adı</mat-label>
                 <input type="email" matInput placeholder="Type your email" [(ngModel)]="username" name="username" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
               </mat-form-field>
               <br />
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Password</mat-label>
+                <mat-label>Şifre</mat-label>
                 <input type="password" id="psw" matInput placeholder="Type your password" [(ngModel)]="password" name="password" required>
               </mat-form-field>
               <br />
@@ -31,11 +31,11 @@
         <mat-card-content>
           <form class="sign up form">
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Email</mat-label>
+              <mat-label>Kullanıcı Adı</mat-label>
               <input matInput placeholder="Email" [(ngModel)]="rgusername" name="rgusername" /> </mat-form-field
             ><br />
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Password</mat-label>
+              <mat-label>Şifre</mat-label>
               <input type="password" matInput placeholder="Password" [(ngModel)]="rgpassword" name="rgpassword" required>
             </mat-form-field>
           </form> </mat-card-content>
