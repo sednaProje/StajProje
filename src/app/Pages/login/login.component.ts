@@ -44,8 +44,7 @@ data:any;
     ) {
 
     userData.getusers().subscribe((data)=>{
-      console.log("data",data);
-      this.users=data;
+    this.users=data;
     });
    }
 

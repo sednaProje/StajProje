@@ -16,4 +16,5 @@ addHotel(addHotel:Hotel):Observable<any>
   {
     return this.http.post(environment.url+"Hotels/AddHotel",addHotel);
   }
+
 }

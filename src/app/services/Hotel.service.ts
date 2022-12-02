@@ -15,5 +15,8 @@ gethotel()
 {
   return this.http.get(environment.url+"Hotels/Hotelget");
 }
-
+deleteHotel(id:string)
+{
+  return this.http.delete(environment.url+"Hotels/"+id)
+}
 }

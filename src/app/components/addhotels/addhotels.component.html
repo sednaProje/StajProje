@@ -1,0 +1,13 @@
+<h1 style="text-align:center;" mat-dialog-title>Otel Ekle</h1>
+<div>
+  <mat-form-field >
+    <input  matInput placeholder="Otel Kodu Giriniz" matInput [(ngModel)]="rghotelcode">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="Otel Adı Giriniz" matInput [(ngModel)]="rghotelname">
+      </mat-form-field>
+  <div mat-dialog-actions>
+
+    <button  (click)="addhotels()" mat-button>Ok</button>
+</div>

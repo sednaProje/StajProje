@@ -6,12 +6,38 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#added-button{
+  color: white;
+  background-color: green;
+  float: right;
+  margin-right: 75px;
 
-table {
-min-width: 90%;
-margin-top: 30px;
-margin-right: auto;
+  }
+
+#tables{
+width: 90%;
 margin-left: auto;
+margin-right: auto;
+}
+table{
+  width: 100%;
+}
+#baslik{
+
+float: left;
+margin-left: 60px;
+}
+#updatebutton{
+  float: right;
 
 }
+#deletebutton{
+  float: right;
+
+}
+
+
+
+
+
 

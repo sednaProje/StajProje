@@ -41,7 +41,9 @@ import { HotelComponent } from './Pages/hotel/hotel.component';
 import { AcenteComponent } from './Pages/acente/acente.component';
 import { MatTable } from '@angular/material/table';
 import { AsyncPipe, registerLocaleData } from "@angular/common";
-import { AddhotelsComponent } from './Pages/hotel/addhotels/addhotels.component';
+import { AddhotelsComponent } from './components/addhotels/addhotels.component';
+import { UpdateHotelComponent } from './components/updateHotel/updateHotel.component';
+import { DeleteHotelComponent } from './components/deleteHotel/deleteHotel.component';
 
 
 
@@ -57,7 +59,9 @@ import { AddhotelsComponent } from './Pages/hotel/addhotels/addhotels.component'
     RoomtypeComponent,
     HotelComponent,
     AcenteComponent,
-    AddhotelsComponent
+    AddhotelsComponent,
+    UpdateHotelComponent,
+    DeleteHotelComponent
 
 
    ],

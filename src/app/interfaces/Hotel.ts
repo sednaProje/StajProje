@@ -1,5 +1,5 @@
 export interface Hotel {
-  HotelID:number,
+  HotelId:number,
   HotelCode:string,
   HotelName:string
 }
