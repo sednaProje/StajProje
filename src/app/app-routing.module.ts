@@ -9,6 +9,7 @@ import { AcenteComponent } from './Pages/acente/acente.component';
 import { HostelComponent } from './Pages/hostel/hostel.component';
 import { RoomtypeComponent } from './Pages/roomtype/roomtype.component';
 import { HotelComponent } from './Pages/hotel/hotel.component';
+import { UpdateHotelComponent } from './components/updateHotel/updateHotel.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
    {path:'acente',component:AcenteComponent,canActivate:[GuardGuard]},
    {path:'hostel',component:HostelComponent,canActivate:[GuardGuard]},
    {path:'roomtype',component:RoomtypeComponent,canActivate:[GuardGuard]},
-   {path:'hotel',component:HotelComponent,canActivate:[GuardGuard]}
+   {path:'hotel',component:HotelComponent,canActivate:[GuardGuard]},
+   {path:'update',component:UpdateHotelComponent,canActivate:[GuardGuard]}
 
 ];
 

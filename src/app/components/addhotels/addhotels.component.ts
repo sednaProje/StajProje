@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AddHotelRequest } from 'src/app/models/AddHotelRequest';
-import { AddHotelService } from 'src/app/services/addHotel.service';
 import { HotelsService } from 'src/app/services/Hotel.service';
 
 @Component({
@@ -18,36 +17,46 @@ export class AddhotelsComponent implements OnInit {
   hotels:any;
   data:any;
   a:boolean=true;
-  HotelCode:string="";
-  HotelName:string="";
-  constructor( private addHotelService:AddHotelService, private hotelService:HotelsService,
+  hotelCode:string="";
+  hotelName:string="";
+  constructor(private hotelService:HotelsService,
     private _snackBar: MatSnackBar,) {
-      hotelService.gethotel().subscribe((data)=>{
-        console.log("data",data);
-        this.hotels=data;
-      });
+
 
    }
 
   ngOnInit() {
+    this.hotelService.gethotel().subscribe((data)=>{
+      console.log("data",data);
+      this.hotels=data;
+    });
+
   }
   addhotels(){
-    this.addHotelRequest.HotelCode = this.rghotelcode;
-    this.addHotelRequest.HotelName = this.rghotelname;
+    this.addHotelRequest.hotelCode = this.rghotelcode;
+    this.addHotelRequest.hotelName = this.rghotelname;
 
     for(;this.s<this.hotels.length;this.s++){
       if(this.rghotelcode==this.hotels[this.s].hotelCode){
-        this._snackBar.open("Kayıt var");
+
+        this._snackBar.open("Kayıtlı Otel Var!");
         this.a=false;
         break;
       }
     }
+    if(this.rghotelcode==""&&this.rghotelcode=="")
+        {
+          this._snackBar.open("Lütfen Boş Alanları Doldurunuz.");
+        }else
     if(this.a==true){
-      this.addHotelService.addHotel(this.addHotelRequest).subscribe(resp=>{
-             });
-      this._snackBar.open("Kayıt Başarılı");
-      this.ngOnInit();
+      this.hotelService.addHotel(this.addHotelRequest).subscribe(resp=>{
+    });
+    this._snackBar.open("Kayıt Başarılı");
+    this.hotelService.gethotel().subscribe((data)=>{
+      console.log("data",data);
+      this.hotels=data;
       window.location.reload();
+    });
     }
 
 

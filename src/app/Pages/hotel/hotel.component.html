@@ -2,8 +2,8 @@
 <br>
     <div >
       <h1 id="baslik" >Otel</h1>
+      <br>
       <button id="added-button" mat-raised-button (click)="opendialog()">Otel Ekle
-
       </button>
     </div>
     <br>
@@ -29,10 +29,10 @@
     <ng-container matColumnDef="updateico">
       <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let element" >
-        <button (click)="removeHotel();" id="deletebutton" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+        <button (click)="removeHotel(element.id);" id="deletebutton" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
           <mat-icon>delete</mat-icon>
         </button>
-        <button (click)="editHotel();" id="updatebutton" mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
+        <button (click)="editHotel(element);" id="updatebutton" mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
           <mat-icon>edit</mat-icon>
         </button>
 

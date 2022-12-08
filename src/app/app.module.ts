@@ -43,7 +43,7 @@ import { MatTable } from '@angular/material/table';
 import { AsyncPipe, registerLocaleData } from "@angular/common";
 import { AddhotelsComponent } from './components/addhotels/addhotels.component';
 import { UpdateHotelComponent } from './components/updateHotel/updateHotel.component';
-import { DeleteHotelComponent } from './components/deleteHotel/deleteHotel.component';
+
 
 
 
@@ -61,7 +61,7 @@ import { DeleteHotelComponent } from './components/deleteHotel/deleteHotel.compo
     AcenteComponent,
     AddhotelsComponent,
     UpdateHotelComponent,
-    DeleteHotelComponent
+
 
 
    ],
