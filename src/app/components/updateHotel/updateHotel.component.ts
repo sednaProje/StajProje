@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 import { Hotel } from 'src/app/interfaces/Hotel';
 import { AddHotelRequest } from 'src/app/models/AddHotelRequest';
 import { HotelsService } from 'src/app/services/Hotel.service';
+import Swal from 'sweetalert2';
 
 interface DialogData {
   element: Hotel;
@@ -38,16 +39,26 @@ export class UpdateHotelComponent implements OnInit {
   id = this.data.element.id;
   ngOnInit() {}
   updateHotel() {
-    if (!this.newHotelCode ) {
+    if (!this.newHotelCode||!this.newHotelName) {
       this.snackBar.open("Otel Kodu ve Otel Adını Doldurunuz");
       return;
     }
 
     this.data.element.hotelCode = this.newHotelCode;
     this.data.element.hotelName = this.newHotelName;
-    this.snackBar.open("Kayıtlarınız Güncellendi!");
+    Swal.fire({
+      title:'Başarılı',
+      text:'Kayıtlı Otel Güncellenmiştir.',
+      icon:'success',
+      showConfirmButton: false,
+      timer:1500
+    }
+    )
     this.hotelService.updateHotel(this.data.element).subscribe(resp=>{
     });
-
+    this.dialogRef.close();
+  }
+  updatecancel(){
+    this.dialogRef.close();
   }
 }

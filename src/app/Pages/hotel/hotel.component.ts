@@ -18,11 +18,11 @@ import { UpdateHotelComponent } from 'src/app/components/updateHotel/updateHotel
 import { Hotel } from 'src/app/interfaces/Hotel';
 import { AddContactRequest } from 'src/app/models/AddContactRequest';
 import { AddHotelRequest } from 'src/app/models/AddHotelRequest';
-
 import { HotelsService } from 'src/app/services/Hotel.service';
-import { environment } from 'src/environments/environment';
 import { AddhotelsComponent } from '../../components/addhotels/addhotels.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hotel',
@@ -54,20 +54,42 @@ export class HotelComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   opendialog() {
-    this.dialog.open(AddhotelsComponent, {});
+    this.dialog.open(AddhotelsComponent,{data:this.HotelData});
+
   }
   ngOnInit() {
     this.HotelData = new MatTableDataSource<Hotel>(this.hotels);
   }
   ngAfterViewInit() {}
   removeHotel(element: any) {
+    Swal.fire({
+      title: 'Emin misin?',
+      text:"Kayıtlı Oteli Silmek İstiyor musun?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText:'Hayır,İptal Et',
+      confirmButtonText: 'Evet,Sil'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title:'Silinme İşlemi Başarılı',
+          text:'Kayıtlı Otel Silindi',
+          icon:'success',
+          showConfirmButton: false,
+          timer:1500
+        }
+        )
+        this.hotelData.deleteHotel(element).subscribe((result) => {
+          this.hotelData.gethotel().subscribe((response) => {
+            this.HotelData = response;
+          });
+        });
+      }
+    })
 
-    this.hotelData.deleteHotel(element).subscribe((result) => {
-      this.hotelData.gethotel().subscribe((response) => {
-        this.HotelData = response;
-        this._snackBar.open('Silme Başarılı!');
-      });
-    });
+
   }
 
   editHotel(element: any) {

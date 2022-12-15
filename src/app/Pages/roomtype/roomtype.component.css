@@ -1,0 +1,18 @@
+#updatebutton{
+    float: right;
+
+  }
+  #deletebutton{
+    float: right;
+
+  }
+  #addhotelbutton{
+    text-align: center;
+  }
+  #added-button{
+    color: white;
+    background-color: green;
+    float: right;
+    margin-right: 75px;
+
+    }

@@ -1,0 +1,13 @@
+#cancelhotelbutton{
+    text-align: center;
+    float: right;
+  }
+  #addhotelbutton
+  {
+    text-align: center;
+    float: left;
+  }
+  #addedbuttons{
+    place-items: center;
+
+  }

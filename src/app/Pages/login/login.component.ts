@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 import { RegisterService } from 'src/app/services/register.service';
 import { Register } from 'src/app/interfaces/register';
 import { AddContactRequest } from 'src/app/models/AddContactRequest';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -54,7 +55,13 @@ data:any;
     this.addContactRequest.Password = this.rgpassword;
     for(;this.s<this.users.length;this.s++){
       if(this.rgusername==this.users[this.s].username){
-        this._snackBar.open("Kullanıcı Adı Kayıtlı!");
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Kullanıcı Adı Kayıtlı',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.a=false;
         break;
       }
@@ -62,7 +69,13 @@ data:any;
     }
     if(this.a==true){
       this.registerService.addUser(this.addContactRequest).subscribe(resp=>{
-        this._snackBar.open("Kayıt Başarılı");
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Kayıt Başarılı',
+          showConfirmButton: false,
+          timer: 1500
+        })
         window.location.reload();
 
      })

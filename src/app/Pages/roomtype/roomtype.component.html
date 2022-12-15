@@ -1,1 +1,55 @@
-<app-navbar></app-navbar>
+<app-navbar>
+        <br>
+            <div >
+              <h1 id="baslik" >Oda Tipi</h1>
+              <br>
+              <button (click)="addRooms();" id="added-button" mat-raised-button >Oda Tipi Ekle
+              </button>
+            </div>
+            <br>
+            <br>
+            <br>
+        <div id="tables" class="mat-elevation-z8 " >
+
+          <table id="table" mat-table [dataSource]="RoomtypeData" >
+            <ng-container matColumnDef="id">
+             <th mat-header-cell *matHeaderCellDef> Id </th>
+
+              <td mat-cell *matCellDef="let element"> {{element.id}}  </td>
+            </ng-container>
+            <ng-container matColumnDef="roomtypeName">
+              <th mat-header-cell *matHeaderCellDef> Oda Tipi </th>
+              <td mat-cell *matCellDef="let element" > {{element.roomType}}</td>
+            </ng-container>
+            <ng-container matColumnDef="roomtypeRemark">
+                <th mat-header-cell *matHeaderCellDef> Açıklama </th>
+                <td mat-cell *matCellDef="let element" > {{element.remark}}</td>
+              </ng-container>
+            <ng-container matColumnDef="updateico">
+              <th mat-header-cell *matHeaderCellDef> </th>
+              <td mat-cell *matCellDef="let element" >
+                <button (click)="removeRoomtype(element.id);"  id="deletebutton" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button (click)="editTypes(element);" id="updatebutton" mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
+                  <mat-icon>edit</mat-icon>
+                </button>
+
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+
+          </table>
+          <mat-paginator [pageSizeOptions]="[10, 20]"
+          showFirstLastButtons
+          aria-label="Select page of periodic elements">
+        </mat-paginator>
+        </div>
+        </app-navbar>
+
+

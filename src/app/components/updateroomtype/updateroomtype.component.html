@@ -1,0 +1,13 @@
+<h1 style="text-align:center;" mat-dialog-title>Oda Tipi Güncelle</h1>
+<div>
+  <mat-form-field >
+    <input matInput placeholder="{{data.element.roomType}}"  matInput [(ngModel)]="newRoomType">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="{{data.element.remark}}"  matInput [(ngModel)]="newRemark" >
+      </mat-form-field>
+  <div id="updatesbutton">
+    <button  id="hotelupdatebutton" mat-stroked-button color="primary" (click)="updateRoom()"  mat-button>Güncelle</button>
+    <button id="hotelupdatebuttoncancel" mat-stroked-button color="warn" (click)="updatecancel()"  mat-button>İptal</button>
+</div>

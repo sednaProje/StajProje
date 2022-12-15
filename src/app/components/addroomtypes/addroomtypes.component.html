@@ -1,0 +1,13 @@
+<h1 style="text-align:center;" mat-dialog-title>Oda Tipi Ekle</h1>
+<div>
+  <mat-form-field >
+    <input required=""  matInput placeholder="Otel Kodu Giriniz" matInput [(ngModel)]="rgroom">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input required="" matInput placeholder="Otel Adı Giriniz" matInput [(ngModel)]="rgremark">
+      </mat-form-field>
+  <div id="addedbuttons">
+    <button id="addhotelbutton" mat-stroked-button color="primary"  (click)="addroomtype()" mat-button>Ekle</button>
+    <button id="cancelhotelbutton" mat-stroked-button color="warn" (click)="cancel()" mat-button>İptal</button>
+</div>

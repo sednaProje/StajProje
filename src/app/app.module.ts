@@ -43,6 +43,10 @@ import { MatTable } from '@angular/material/table';
 import { AsyncPipe, registerLocaleData } from "@angular/common";
 import { AddhotelsComponent } from './components/addhotels/addhotels.component';
 import { UpdateHotelComponent } from './components/updateHotel/updateHotel.component';
+import { UpdateroomtypeComponent } from './components/updateroomtype/updateroomtype.component';
+import { AddroomtypesComponent } from './components/addroomtypes/addroomtypes.component';
+
+
 
 
 
@@ -61,12 +65,15 @@ import { UpdateHotelComponent } from './components/updateHotel/updateHotel.compo
     AcenteComponent,
     AddhotelsComponent,
     UpdateHotelComponent,
+    UpdateroomtypeComponent,
+    AddroomtypesComponent
 
 
 
    ],
 
   imports: [
+
     HttpClientModule,
     MatSnackBarModule,
     BrowserModule,
@@ -105,7 +112,6 @@ import { UpdateHotelComponent } from './components/updateHotel/updateHotel.compo
     FormsModule,
     MatTableModule,
     MatDialogModule,
-
 
   ],
 
